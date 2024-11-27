@@ -1,0 +1,81 @@
+:root {
+  --color-main-light: #D1512D;
+}
+
+::selection {
+  background-color: var(--color-main-light);
+}
+
+body {
+  font-family: "PT Sans Caption", sans-serif;
+  background-color: var(--bg-color-light);
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.btn {
+  letter-spacing: 0.1875rem;
+  font-family: "Bree Serif", serif;
+}
+
+.btn-mode {
+  --bs-btn-padding-x: 0;
+  --bs-btn-padding-y: 0;
+  --bs-btn-font-size: 2.7rem;
+  --bs-btn-border-color: transparent;
+  --bs-btn-box-shadow: none;
+  --bs-btn-focus-box-shadow: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.btn-mode:active {
+  border: none;
+  outline: none;
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
+
+.btn-mode:visited {
+  border: none;
+  outline: none;
+}
+
+.btn-submit {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--color-main-light);
+  --bs-btn-border-color: var(--color-main-light);
+  --bs-btn-hover-color: var(--color-main-light);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: var(--color-main-light);
+}
+
+main .title {
+  position: relative;
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+  z-index: 2;
+}
+
+.sub-title {
+  font-family: "Righteous", cursive;
+  font-size: 1.6rem;
+  background-image: linear-gradient(to right, #158129, #b4bd33);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-control {
+  padding: 0.375rem 0.75rem;
+  background-color: transparent;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: none;
+}

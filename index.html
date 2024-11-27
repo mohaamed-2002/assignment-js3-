@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="py-5" style="background-color: #F7ECDE;">
+
+        <header>
+
+            <div class="container mt-1 ">
+                <h1 class="title mx-auto position-relative w-fit-content fs-1 fw-bold">Bookmarker</h1>
+
+                <hr class="m-3">
+                
+
+                <div class="needs-validation overflow-hidden d-flex flex-column justify-content-center align-items-center gap-4 px-4 py-5 mt-5 ">
+                    <h2 class="sub-title fw-bolder mb-2 ">
+                        <i class="icon-bookmark align-middle"></i>
+                        your favorite sites
+                        <i class="icon-bookmark align-middle"></i>
+                    </h2>
+                    <div class="site-name w-100 d-flex flex-column justify-content-center ">
+                        <label for="bookmarkName" class="pb-2 fs-6  fw-semibold"><i class="icon-book-reference pe-2"></i>Site Name</label>
+                        <input id="bookmarkName" type="text" placeholder="Bookmark Name" class="form-control bg-white" required />
+                    </div>
+                    <div class="site-url w-100 d-flex flex-column justify-content-center">
+                        <label for="bookmarkURL" class="pb-2  fs-6 fw-semibold">
+                            <i class="icon-link pe-2"></i>Site URL</label>
+                        <input id="bookmarkURL" type="url" placeholder="Website URL" class="form-control bg-white" required />
+                    </div>
+                    <button id="submitBtn" type="submit"
+                        class="btn btn-submit text-capitalize fw-semibold px-5">Submit</button>
+                </div>
+                <hr class="m-1">
+            </div>
+        </header>
+
+        <section id="tableSection" class="mt-4 py-4">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table text-center ">
+                        <thead class="bg-white">
+                            <tr>
+                                <th class="py-2 ">Index</th>
+                                <th class="py-2 ">Website Name</th>
+                                <th class="py-2 ">Visit</th>
+                                <th class="py-2 ">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableContent"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
