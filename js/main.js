@@ -7,38 +7,23 @@ const tableContent = document.querySelector('#tableContent');
 let bookmarks = [];
 
 const messagesAlert = {
-    msgErrorObj: {
-        icon: "error",
-        title: "Oops...",
-        text: "The Site Name or URL is not valid.",
-        footer: `<p class="text-start fw-semibold">
-        <i class="icon-angle-double-right text-danger"></i> The Site Name must contain at least 3 characters. 
-        <br>
-        <i class="icon-angle-double-right text-danger"></i> The Site URL must be valid.</p>`
+    msgError: {
+        text: "The Site Name or URL is not valid."
     },
-    msgSussesObj: {
-        title: "Great work!",
+    
+    msgSusses: {
+        title: "Great work",
         text: "You've successfully added a bookmark.",
-        icon: "success",
-        timer: 1000
     },
-    msgConfirmObj: {
-        title: "Are you sure?",
+    msgConfirm: {
         text: "You are about to delete this website. This action cannot be undone.",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!"
     },
-    msgDeleteObj: {
-        title: "Deleted!",
+    msgDelete: {
+        title: "Deleted!!",
         text: "Your site has been deleted.",
-        icon: "success",
-        timer: 1000
     }
 }
-
 
 function toggleClass(el, className, condition) {
     condition ? el.classList.add(className) : el.classList.remove(className);
@@ -85,14 +70,14 @@ function Display(bookmarksArray) {
     tableContent.innerHTML = contentTable;
 }
 
-function addToBookmarks(bookmarkObj) {
-    bookmarks.push(bookmarkObj);
+function addToBookmarks(bookmark) {
+    bookmarks.push(bookmark);
     setLocalstorage('bookmarksList', bookmarks);
     Display(bookmarks);
 }
 
 function deleteBookmark(index) {
-    Swal.fire(messagesAlert.msgConfirmObj)
+    Swal.fire(messagesAlert.msgConfirm)
         .then((result) => {
             if (result.isConfirmed) {
                 siteIndex = bookmarks.indexOf(bookmarks.find(site => site.index === index))
@@ -100,7 +85,7 @@ function deleteBookmark(index) {
                 Localstorage.setItem('bookmarksList', bookmarks);
                 Display(bookmarks);
                 if (bookmarks.length < 1) { document.querySelector('#tableSection').style.display = 'none'; }
-                Swal.fire(messagesAlert.msgDeleteObj);
+                Swal.fire(messagesAlert.msgDelete);
             }
         });
 }
@@ -116,9 +101,9 @@ submitBtn.addEventListener('click', () => {
         let bookmark = { index: bookmarks.length, siteName: siteName.value, siteURL: siteURL.value };
         addToBookmarks(bookmark);
         clearInput();
-        Swal.fire(messagesAlert.msgSussesObj);
+        Swal.fire(messagesAlert.msgSusses);
     } else {
-        Swal.fire(messagesAlert.msgErrorObj);
+        Swal.fire(messagesAlert.msgError);
     }
 });
 
